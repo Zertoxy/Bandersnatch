@@ -1,11 +1,11 @@
 from settings import *
 from carte import Map
 from player import Player
+import sys
 
 
 class Game:
     def __init__(self):
-        pg.init()
         self.screen = pg.display.set_mode(RES)
         self.clock = pg.time.Clock()
         self.new_game()
@@ -48,7 +48,7 @@ class Game:
         self.player = Player(self)
 
     def draw(self):
-        self.screen.fill('black')
+        self.screen.fill((0, 0, 0))
         self.carte.draw_map()
         self.player.draw_player()
         pg.display.update()

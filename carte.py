@@ -10,16 +10,14 @@ class Map:
         self.textures = {
             1: (self.game.stone_wall, pg.Rect(0, 0, WALL_LARG, WALL_LONG)),
             2: (self.game.grass, pg.Rect(0, 0, WALL_LARG, WALL_LONG)),
-            3: (self.game.dirt, pg.Rect(0, 0, WALL_LARG, WALL_LONG)),
+            3: (self.game.dirt, pg.Rect(0, 0, WALL_LARG, WALL_LONG))
         }
 
     def get_map(self):
-        for l, col in enumerate(mini_map):
+        for ligne, col in enumerate(mini_map):
             for i, value in enumerate(col):
                 if value:
-                    self.world_map[(i, l)] = value
-
-        print(self.world_map)
+                    self.world_map[(i, ligne)] = value
 
     def draw_map(self):
         # SANS LES TEXTURES DE MURS
